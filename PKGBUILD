@@ -19,7 +19,6 @@ pkgbase=llvm-amdgpu
 pkgname=(llvm-amdgpu lib32-llvm-amdgpu)
 pkgver=${major}
 pkgrel=1
-arch=(x86_64)
 url='https://repo.radeon.com/amdgpu'
 license=(MIT)
 source=(https://repo.radeon.com/amdgpu/${repo_folder_ver}/ubuntu/pool/main/l/llvm-amdgpu/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
@@ -68,6 +67,7 @@ move_copyright(){
 
 package_llvm-amdgpu(){
   pkgdesc='AMDGPU LLVM'
+  arch=(x86_64)
 
   extract_deb "${srcdir}"/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
   extract_deb "${srcdir}"/llvm-amdgpu-${llvm_ver}.${minor1}-dev_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
@@ -93,6 +93,7 @@ package_llvm-amdgpu(){
 
 package_lib32-llvm-amdgpu(){
   pkgdesc='AMDGPU LLVM (32-bit)'
+  arch=(i686 x86_64)
   depends=(llvm-amdgpu=${major})
 
   extract_deb "${srcdir}"/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_i386.deb
