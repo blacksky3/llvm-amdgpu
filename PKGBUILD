@@ -19,6 +19,7 @@ pkgbase=llvm-amdgpu
 pkgname=(llvm-amdgpu lib32-llvm-amdgpu)
 pkgver=${major}
 pkgrel=1
+arch=(x86_64)
 url='https://repo.radeon.com/amdgpu'
 license=(MIT)
 source=(https://repo.radeon.com/amdgpu/${repo_folder_ver}/ubuntu/pool/main/l/llvm-amdgpu/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
