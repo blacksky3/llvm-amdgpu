@@ -67,8 +67,7 @@ move_copyright(){
 }
 
 package_llvm-amdgpu(){
-  pkgdesc='AMDGPU userspace interface to kernel DRM services'
-  depends=('libpciaccess')
+  pkgdesc='AMDGPU LLVM'
 
   extract_deb "${srcdir}"/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
   extract_deb "${srcdir}"/llvm-amdgpu-${llvm_ver}.${minor1}-dev_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_amd64.deb
@@ -93,8 +92,8 @@ package_llvm-amdgpu(){
 }
 
 package_lib32-llvm-amdgpu(){
-  pkgdesc='AMDGPU userspace interface to kernel DRM services (32-bit)'
-  depends=(lib32-libpciaccess libdrm-amdgpu=${major})
+  pkgdesc='AMDGPU LLVM (32-bit)'
+  depends=(llvm-amdgpu=${major})
 
   extract_deb "${srcdir}"/libllvm${llvm_ver}.${minor1}-amdgpu_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_i386.deb
   extract_deb "${srcdir}"/llvm-amdgpu-${llvm_ver}.${minor1}-dev_${llvm_ver}.${minor1}-${minor2}.${ubuntu_ver}_i386.deb
